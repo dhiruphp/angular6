@@ -1,0 +1,61 @@
+<!-- content page -->
+<section class="bgwhite p-t-66 p-b-60">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 p-b-30">
+        <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+          <h4 class="m-text26 p-b-36 p-t-15">
+            Signup
+          </h4>
+          <!-- {{diagnostic}} -->
+          <div class="bo4 of-hidden size15 m-b-20">
+            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="name" placeholder="Full Name" required
+            [(ngModel)]="model.name" name="name"
+            #name="ngModel">
+            <div [hidden]="name.valid || name.pristine"
+                class="alert alert-danger">
+              Name is required
+            </div>
+          </div>
+
+          <div class="bo4 of-hidden size15 m-b-20">
+            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="email" placeholder="Email" required
+            [(ngModel)]="model.email" name="email"
+            >
+            
+          </div>
+
+          <div class="bo4 of-hidden size15 m-b-20">
+            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="password" placeholder="Password" required
+            [(ngModel)]="model.password" name="password"
+             >
+          </div>
+
+          <div class="bo4 of-hidden size15 m-b-20">
+            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="cpassword" placeholder="Confirm-Password"
+            [(ngModel)]="model.cpassword" name="cpassword"
+            >
+          </div>
+          <div class="bo4 of-hidden size15 m-b-20">
+            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="phone" placeholder="Phone" required
+            [(ngModel)]="model.phone" name="phone"
+            >
+          </div>
+
+          <div class="bo4 of-hidden size15 m-b-20">
+            <select class="sizefull s-text7 p-l-22 p-r-22" id="city" required
+            [(ngModel)]="model.city" name="city">
+              <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+            </select>
+          </div>
+
+          <div class="w-size25">
+            <!-- Button -->
+            <button [disabled]="!signupForm.form.valid" type="submit" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4">Submit</button>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
