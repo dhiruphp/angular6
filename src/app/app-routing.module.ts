@@ -23,5 +23,5 @@ const routes: Routes = [
   ],
   exports: [ RouterModule ]  
 })
-//test for commit revert
+
 export class AppRoutingModule { }
